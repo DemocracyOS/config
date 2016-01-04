@@ -37,6 +37,13 @@ module.exports = require('@democracyos/config')({
 }
 ```
 
+**And, in your `/index.js`, or wherever:**
+```javascript
+var config = require('./config')
+
+console.log(config.title) // My awesome app on Development
+```
+
 ## TODO
 * Refactor, please.
 * Add tests.
