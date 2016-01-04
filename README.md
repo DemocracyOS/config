@@ -5,13 +5,13 @@ Configuration manager for node apps.
 
 ### Install
 
-`npm i @democracyos/config -S`
+`npm i democracyos-config -S`
 
 ### Usage
 
 **/config/index.js**
 ```javascript
-module.exports = require('@democracyos/config')({
+module.exports = require('democracyos-config')({
   path: __dirname
 })
 ```
