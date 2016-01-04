@@ -25,15 +25,15 @@ module.exports = require('@democracyos/config')({
 **/config/defaults.json**
 ```json
 {
-  port: 3000,
-  title: "My awesome app Defaults"
+  "port": 3000,
+  "title": "My awesome app Defaults"
 }
 ```
 
 **/config/development.json**
 ```json
 {
-  title: "My awesome app on Development"
+  "title": "My awesome app on Development"
 }
 ```
 
