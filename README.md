@@ -9,31 +9,31 @@ Configuration manager for node apps.
 
 ### Usage
 
-** /config/index.js **
+**/config/index.js**
 ```javascript
 module.exports = require('@democracyos/config')({
   path: __dirname
 })
 ```
 
-** /config/.gitignore **
+**/config/.gitignore**
 ```
 *.json
 !defaults.json
 ```
 
-** /config/defaults.json **
+**/config/defaults.json**
 ```json
 {
   port: 3000,
-  title: 'My awesome app Defaults'
+  title: "My awesome app Defaults"
 }
 ```
 
-** /config/development.json **
+**/config/development.json**
 ```json
 {
-  title: 'My awesome app on Development'
+  title: "My awesome app on Development"
 }
 ```
 
