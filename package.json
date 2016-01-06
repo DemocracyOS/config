@@ -15,5 +15,5 @@
     "lint": "standard"
   },
   "author": "DemocracyOS",
-  "license": "GPL-3.0"
+  "license": "MIT"
 }
