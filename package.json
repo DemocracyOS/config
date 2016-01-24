@@ -12,8 +12,7 @@
     "standard": "^5.4.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard"
+    "test": "standard"
   },
   "author": "DemocracyOS",
   "license": "MIT"
