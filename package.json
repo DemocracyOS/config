@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Node configuration files loader. Overrideable by environment variables. Very opinionated.",
   "main": "index.js",
+  "repository": "DemocracyOS/config",
   "dependencies": {
     "change-case": "^2.3.1",
     "component-type": "^1.2.0"
