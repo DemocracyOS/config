@@ -73,3 +73,8 @@ approach for `production`.
 
 ## TODO
 * Tests
+
+## License
+* MIT
+* © 2016 [Demoracia en Red](http://democraciaenred.org)
+* More details under [LICENSE](https://github.com/DemocracyOS/config/blob/master/LICENSE)
