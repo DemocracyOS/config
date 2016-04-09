@@ -31,13 +31,8 @@ module.exports = loadConfig
 
 function loadConfig (options) {
   if (!options) options = {}
-
-  if (!options.path) {
-    throw new Error('Must set a path of the configuration folder.')
-  }
-
   if (!options.environment) options.environment = env.NODE_ENV || 'development'
-
+  if (!options.path) options.path = path.join(process.cwd(), 'config')
   var defaultsPath = options.defaultsPath || path.join(options.path, 'defaults.json')
   var currentPath = options.currentPath || path.join(options.path, options.environment + '.json')
 
