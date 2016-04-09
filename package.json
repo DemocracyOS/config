@@ -1,6 +1,6 @@
 {
   "name": "democracyos-config",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Node configuration files loader. Overrideable by environment variables. Very opinionated.",
   "main": "index.js",
   "repository": "DemocracyOS/config",
