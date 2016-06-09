@@ -39,7 +39,7 @@ including default values and types it should have:
 !defaults.json
 ```
 
-4. Load your config, especify the folder where all the config files are located.
+4. Load your config, specify the path to where all the config files are located.
 
 **/config/index.js**
 ```javascript
