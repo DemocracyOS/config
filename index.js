@@ -51,12 +51,11 @@ function loadConfig (options) {
     var c = get(config, s)
     var newVal
 
-    if (typeOf(val) === 'object') {
+    if (typeOf(val) === 'object' && JSON.stringify(val) !== '{}') {
       c[key] = {}
       objForEach(val, parse, s.concat(key))
       return
     }
-
     var envKey = s.concat(key).map(changeCase.constantCase).join('_')
     if (process.env.hasOwnProperty(envKey)) {
       try {
@@ -80,7 +79,6 @@ function loadConfig (options) {
 
     c[key] = val
   }
-
   return config
 }
 
