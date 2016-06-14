@@ -9,11 +9,24 @@
     "component-type": "^1.2.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
     "standard": "^5.4.1"
   },
   "scripts": {
-    "test": "standard"
+    "test": "standard && mocha"
   },
   "author": "DemocracyOS",
-  "license": "MIT"
+  "license": "MIT",
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "define"
+    ]
+  }
 }
