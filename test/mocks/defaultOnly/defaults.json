@@ -1,0 +1,6 @@
+{
+  "publicPort": 3000,
+  "title": "My awesome app default title.",
+  "items": ["one", "two", "three"],
+  "custom": {}
+}
