@@ -1,0 +1,8 @@
+{
+  "publicPort": 8080,
+  "title": "My awesome app development title.",
+  "items": ["ONE", "TWO", "THREE"],
+  "custom": {
+    "foo":"bar"
+  }
+}
