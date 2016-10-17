@@ -10,7 +10,7 @@ and override them per environment, using another file or environment variables.
 
 ### Usage
 
-1. Create `defaults.json` file. It will define the schema of the config,
+1- Create `defaults.json` file. It will define the schema of the config,
 including default values and types it should have:
 
 **/config/defaults.json**
@@ -21,7 +21,7 @@ including default values and types it should have:
 }
 ```
 
-2. Environment specific overrides are optional, using `{NODE_ENV}.json` or
+2- Environment specific overrides are optional, using `{NODE_ENV}.json` or
 `development.json` as default:
 
 **/config/development.json**
@@ -31,7 +31,7 @@ including default values and types it should have:
 }
 ```
 
-3. Only commit default values! You wouldn't want to commit any keys, etc.
+3- Only commit default values! You wouldn't want to commit any keys, etc.
 
 **/config/.gitignore**
 ```
@@ -39,7 +39,7 @@ including default values and types it should have:
 !defaults.json
 ```
 
-4. Load your config, specify the path to where all the config files are located.
+4- Load your config, specify the path to where all the config files are located.
 
 **/config/index.js**
 ```javascript
@@ -48,7 +48,7 @@ module.exports = require('democracyos-config')({
 })
 ```
 
-5. Use it:
+5- Use it:
 
 **And, in your `/server.js`, or wherever:**
 ```javascript
