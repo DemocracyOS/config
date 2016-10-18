@@ -52,6 +52,9 @@ describe('Get default config with [env].json override', function () {
     expect(config.subcustom.subsubcustom).to.be.a('object')
     expect(config.subcustom.subsubcustom).to.eql({foo: 'bar'})
   })
+  it('shouldnt read a value that is not defined on defaults.json', function () {
+    expect(config.shouldntBeParsed).to.be.undefined
+  })
 })
 
 describe('Get default config with enviroment variables override', function () {

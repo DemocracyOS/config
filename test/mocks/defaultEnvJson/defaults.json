@@ -4,6 +4,9 @@
   "items": ["one", "two", "three"],
   "custom": {},
   "subcustom": {
+    "somedefault": {
+      "subdefault": "default value"
+    },
     "subsubcustom": {}
   }
 }

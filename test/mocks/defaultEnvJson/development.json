@@ -2,10 +2,14 @@
   "publicPort": 8080,
   "title": "My awesome app development title.",
   "items": ["ONE", "TWO", "THREE"],
+  "shouldntBeParsed": true,
   "custom": {
     "foo":"bar"
   },
   "subcustom": {
+    "somedefault": {
+      "subdefault": "overriden value"
+    },
     "subsubcustom": {
       "foo": "bar"
     }
