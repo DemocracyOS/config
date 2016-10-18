@@ -4,5 +4,10 @@
   "items": ["ONE", "TWO", "THREE"],
   "custom": {
     "foo":"bar"
+  },
+  "subcustom": {
+    "subsubcustom": {
+      "foo": "bar"
+    }
   }
 }

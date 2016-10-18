@@ -22,6 +22,10 @@ describe('Get default config without overrides', function () {
     expect(config.custom).to.be.a('object')
     expect(config.custom).to.eql({})
   })
+  it('should read empty child object property', function () {
+    expect(config.subcustom.subsubcustom).to.be.a('object')
+    expect(config.subcustom.subsubcustom).to.eql({})
+  })
 })
 
 describe('Get default config with [env].json override', function () {
@@ -44,6 +48,10 @@ describe('Get default config with [env].json override', function () {
     expect(config.custom).to.be.a('object')
     expect(config.custom).to.eql({foo: 'bar'})
   })
+  it('should read overrided empty child object property', function () {
+    expect(config.subcustom.subsubcustom).to.be.a('object')
+    expect(config.subcustom.subsubcustom).to.eql({foo: 'bar'})
+  })
 })
 
 describe('Get default config with enviroment variables override', function () {
@@ -51,6 +59,7 @@ describe('Get default config with enviroment variables override', function () {
   process.env.TITLE = 'My awesome app development title.'
   process.env.ITEMS = ['ONE', 'TWO', 'THREE']
   process.env.CUSTOM = '{"foo":"bar"}'
+  process.env.SUBCUSTOM_SUBSUBCUSTOM = '{"foo":"bar"}'
 
   var config = democracyosConfig({ path: path.join(__dirname, 'mocks', 'defaultOnly') })
   it('should read overrided number property', function () {
@@ -70,5 +79,9 @@ describe('Get default config with enviroment variables override', function () {
   it('should read overrided empty object property', function () {
     expect(config.custom).to.be.a('object')
     expect(config.custom).to.eql({foo: 'bar'})
+  })
+  it('should read overrided empty child object property', function () {
+    expect(config.subcustom.subsubcustom).to.be.a('object')
+    expect(config.subcustom.subsubcustom).to.eql({foo: 'bar'})
   })
 })
