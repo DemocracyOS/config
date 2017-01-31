@@ -1,6 +1,8 @@
 Config
 ======
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DemocracyOS/config.svg)](https://greenkeeper.io/)
+
 Configuration manager for node apps. Keep all your default settings on a file,
 and override them per environment, using another file or environment variables.
 
