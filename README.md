@@ -73,6 +73,12 @@ approach for `production`.
   * e.g.: `"rssEnabled": false` => `RSS_ENABLED="false"`
 * For more info, Types are casted using `/lib/cast-string.js`
 
+## Tests
+
+```
+npm run test
+```
+
 ## License
 * MIT
 * © 2017 [Demoracia en Red](http://democraciaenred.org)
