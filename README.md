@@ -71,10 +71,7 @@ approach for `production`.
   * e.g.: `"rssEnabled": false` => `RSS_ENABLED="false"`
 * For more info, Types are casted using `/lib/cast-string.js`
 
-## TODO
-* Tests
-
 ## License
 * MIT
-* © 2016 [Demoracia en Red](http://democraciaenred.org)
+* © 2017 [Demoracia en Red](http://democraciaenred.org)
 * More details under [LICENSE](https://github.com/DemocracyOS/config/blob/master/LICENSE)
