@@ -71,6 +71,8 @@ approach for `production`.
   * e.g.: `"staff": ["mail@eg.com", "a@c.m"]` => `STAFF="mail@eg.com,a@c.m"`
 * `Boolean`s should be `true` or `false` as strings.
   * e.g.: `"rssEnabled": false` => `RSS_ENABLED="false"`
+* `Objects`s should be a JSON string.
+  * e.g.: `"connectionData": {}` => `CONNECTION_DATA='{"ip": "127.0.0.1", "port": 45333}'`
 * For more info, Types are casted using `/lib/cast-string.js`
 
 ## Tests
