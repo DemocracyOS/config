@@ -77,6 +77,7 @@ describe('Get default config with enviroment variables override', function () {
   process.env.TITLE = 'My awesome app development title.'
   process.env.ITEMS = ['ONE', 'TWO', 'THREE']
   process.env.CUSTOM = '{"foo":"bar"}'
+  process.env.S3_BUCKET = 'custom-bucket'
   process.env.SUBCUSTOM_SUBSUBCUSTOM = '{"foo":"bar"}'
 
   var config = democracyosConfig({
@@ -103,6 +104,10 @@ describe('Get default config with enviroment variables override', function () {
   it('should read overrided empty object property', function () {
     expect(config.custom).to.be.a('object')
     expect(config.custom).to.eql({foo: 'bar'})
+  })
+
+  it('should read keys with numbers', function () {
+    expect(config.s3.bucket).to.be.a('custom-bucket')
   })
 
   it('should read overrided empty child object property', function () {
