@@ -56,6 +56,7 @@ function loadConfig (options) {
       objForEach(val, parse, s.concat(key))
       return
     }
+
     var envKey = s.concat(key).map(changeCase.constantCase).join('_')
     if (process.env.hasOwnProperty(envKey)) {
       try {

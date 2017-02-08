@@ -3,6 +3,9 @@
   "title": "My awesome app default title.",
   "items": ["one", "two", "three"],
   "custom": {},
+  "s3": {
+    "bucket": "default-bucket"
+  },
   "subcustom": {
     "subsubcustom": {}
   }
