@@ -96,9 +96,7 @@ describe('Get default config with enviroment variables override', function () {
 
   it('should read overrided array property', function () {
     expect(config.items).to.be.an('array')
-    expect(config.items[0]).to.equal('ONE')
-    expect(config.items[1]).to.equal('TWO')
-    expect(config.items[2]).to.equal('THREE')
+    expect(config.items).to.eql(['ONE', 'TWO', 'THREE'])
   })
 
   it('should read overrided empty object property', function () {
@@ -107,7 +105,8 @@ describe('Get default config with enviroment variables override', function () {
   })
 
   it('should read keys with numbers', function () {
-    expect(config.s3.bucket).to.be.a('custom-bucket')
+    expect(config.s3.bucket).to.be.a('string')
+    expect(config.s3.bucket).to.equal('custom-bucket')
   })
 
   it('should read overrided empty child object property', function () {
