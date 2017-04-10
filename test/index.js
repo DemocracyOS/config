@@ -1,6 +1,15 @@
-var expect = require('chai').expect
-var democracyosConfig = require('../')
+/* eslint-env mocha */
+
 var path = require('path')
+var expect = require('chai').expect
+var lint = require('mocha-eslint')
+var democracyosConfig = require('../')
+
+lint([
+  'index.js',
+  'lib/**/*.js',
+  'test/**/*.js'
+])
 
 describe('Get default config without overrides', function () {
   var config = democracyosConfig({
@@ -59,16 +68,16 @@ describe('Get default config with [env].json override', function () {
 
   it('should read overrided empty object property', function () {
     expect(config.custom).to.be.a('object')
-    expect(config.custom).to.eql({foo: 'bar'})
+    expect(config.custom).to.eql({ foo: 'bar' })
   })
 
   it('should read overrided empty child object property', function () {
     expect(config.subcustom.subsubcustom).to.be.a('object')
-    expect(config.subcustom.subsubcustom).to.eql({foo: 'bar'})
+    expect(config.subcustom.subsubcustom).to.eql({ foo: 'bar' })
   })
 
   it('shouldnt read a value that is not defined on defaults.json', function () {
-    expect(config.shouldntBeParsed).to.be.undefined
+    expect(config.shouldntBeParsed).to.eql(undefined)
   })
 })
 
@@ -101,7 +110,7 @@ describe('Get default config with enviroment variables override', function () {
 
   it('should read overrided empty object property', function () {
     expect(config.custom).to.be.a('object')
-    expect(config.custom).to.eql({foo: 'bar'})
+    expect(config.custom).to.eql({ foo: 'bar' })
   })
 
   it('should read keys with numbers', function () {
@@ -111,6 +120,6 @@ describe('Get default config with enviroment variables override', function () {
 
   it('should read overrided empty child object property', function () {
     expect(config.subcustom.subsubcustom).to.be.a('object')
-    expect(config.subcustom.subsubcustom).to.eql({foo: 'bar'})
+    expect(config.subcustom.subsubcustom).to.eql({ foo: 'bar' })
   })
 })

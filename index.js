@@ -29,19 +29,28 @@ var env = process.env
 
 module.exports = loadConfig
 
-function loadConfig (options) {
-  if (!options) options = {}
-  if (!options.environment) options.environment = env.NODE_ENV || 'development'
-  if (!options.path) options.path = path.join(process.cwd(), 'config')
-  var defaultsPath = options.defaultsPath || path.join(options.path, 'defaults.json')
-  var currentPath = options.currentPath || path.join(options.path, options.environment + '.json')
+function loadConfig (opts) {
+  var options = Object.assign({
+    environment: env.NODE_ENV || 'development',
+    path: path.join(process.cwd(), 'config')
+  }, opts)
 
-  if (!fs.existsSync(defaultsPath)) {
-    throw new Error(defaultsPath + ' file not found.')
+  if (!options.defaultsPath) {
+    options.defaultsPath = path.join(options.path, 'defaults.json')
   }
 
-  var defaultConfig = require(defaultsPath)
-  var currentConfig = fs.existsSync(currentPath) ? require(currentPath) : {}
+  if (!options.currentPath) {
+    options.currentPath = path.join(options.path, options.environment + '.json')
+  }
+
+  if (!fs.existsSync(options.defaultsPath)) {
+    throw new Error(options.defaultsPath + ' file not found.')
+  }
+
+  var defaultConfig = require(options.defaultsPath)
+  var currentConfig = fs.existsSync(options.currentPath)
+    ? require(options.currentPath)
+    : {}
   var config = {}
 
   objForEach(defaultConfig, parse)
@@ -64,6 +73,7 @@ function loadConfig (options) {
       } catch (e) {
         throw new Error('There was an error when parsing ENV "' + envKey + '": ' + e)
       }
+
       c[key] = newVal
       return
     }
@@ -71,15 +81,18 @@ function loadConfig (options) {
     var local = get(currentConfig, s)
     if (local && local.hasOwnProperty(key)) {
       newVal = local[key]
+
       if (typeOf(val) !== typeOf(newVal)) {
-        throw new Error('Invalid value for key "' + key + '" on "' + path.basename(currentPath) + '": ' + '". Should be "' + typeOf(val) + '".')
+        throw new Error('Invalid value for key "' + key + '" on "' + path.basename(options.currentPath) + '": ' + '". Should be "' + typeOf(val) + '".')
       }
+
       c[key] = newVal
       return
     }
 
     c[key] = val
   }
+
   return config
 }
 
