@@ -6,6 +6,8 @@ Config
 Configuration manager for node apps. Keep all your default settings on a json file,
 and override them per environment, using another file or environment variables.
 
+| DISCLAIMER: Use https://github.com/DemocracyOS/dos-config, unless you want to customize default options.
+
 ### Install
 
 `npm i democracyos-config -S`
