@@ -30,10 +30,11 @@ var env = process.env
 module.exports = loadConfig
 
 function loadConfig (opts) {
-  var options = Object.assign({
-    environment: env.NODE_ENV || 'development',
-    path: path.join(process.cwd(), 'config')
-  }, opts)
+  opts = opts || {}
+  var options = {}
+
+  options.environment = opts.environment || env.NODE_ENV || 'development'
+  options.path = opts.path || path.join(process.cwd(), 'config')
 
   if (!options.defaultsPath) {
     options.defaultsPath = path.join(options.path, 'defaults.json')
