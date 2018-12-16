@@ -14,7 +14,7 @@
     "eslint-config-democracyos": "^2.0.0",
     "eslint-plugin-mocha": "~4.11.0",
     "mocha": "~3.5.0",
-    "mocha-eslint": "~3.0.1"
+    "mocha-eslint": "~5.0.0"
   },
   "files": [
     "lib"
