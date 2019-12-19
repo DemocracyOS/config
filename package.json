@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "DemocracyOS/config",
   "dependencies": {
-    "change-case": "~3.0.1",
+    "change-case": "~4.1.1",
     "component-type": "~1.2.0"
   },
   "devDependencies": {
